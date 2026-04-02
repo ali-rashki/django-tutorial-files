@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "courses_app/css/style_list.css" %}">
+</head>
+<body>
+    <div class="page">
+        <div class="badge">
+            <span>Explore</span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 18px rgba(79, 225, 245, 0.6);"></span>
+            <span>Top Courses</span>
+        </div>
+        <div class="hero">
+            <h1>Welcome to your course space</h1>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Id</th>
+                        <th>Views</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        <td>
+                         <a class="table-link" href="/course/detail/{{ course.id }}">{{ course.title }}</a>
+                        </td>
+                        <td>{{ course.description }}</td>
+                        <td>{{ course.situation }}</td>
+                        <td>{{ course.id }}</td>
+                        <td>{{ course.views }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr class="empty-row">
+                        <td colspan="5">O_U^OñUØƒ?OOUO O"OñOUO U+U.OUOO' U^OªU^O_ U+O_OOñO_.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
