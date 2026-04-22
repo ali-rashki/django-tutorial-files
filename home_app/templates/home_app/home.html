@@ -1,40 +1,41 @@
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "home_app/css/style_home.css" %}">
+    <title>Learning Project | Home</title>
+    <link rel="stylesheet" href="{% static 'home_app/css/style_home.css' %}">
 </head>
 <body>
-    <div class="page">
-        <header>
-            <div class="brand">
-                <div class="brand-dot"></div>
-                <div>Home</div>
-            </div>
-            <nav>
-                <a href="#" aria-label="Dashboard">Dashboard</a>
-                <a href="/course/list/" aria-label="Courses">Courses</a>
-                <a href="#" aria-label="Community">Community</a>
-                <a class="pill" href="#" aria-label="Get Started">Get Started</a>
-            </nav>
-        </header>
 
-        <section class="hero">
-            <div>
-                <h1>Welcome to the <span>Home</span></h1>
-            </div>
-    </div>
-            <!-- <div> 
-                <img style="position: fixed;" src="{% static "home_app/img/testimg.png" %}" alt="">
-            </div> -->
+<div class="page">
+    <header>
+        <div class="brand">
+            <div class="brand-dot"></div>
+            <div>Learning Project</div>
+        </div>
+        <nav>
+            <a href="/account/users/">Users</a>
+            <a href="/course/list/">Courses</a>
+            <!-- لینک تیکت رو دقیقاً به صفحه add وصل کردیم -->
+            <a href="/tickets/list">Tickets</a>
+            <a href="/admin/" class="pill">Admin</a>
+        </nav>
+    </header>
 
-            <!-- <img src="{% static "img/testimg.png" %}" alt=""> -->
-        </section>
-    </div>
+    <section class="hero">
+        <div>
+            <h1>Welcome to <span>Your Learning Project</span></h1>
+            <p>A professional Django environment. Dive into courses or manage your tickets seamlessly.</p>
+
+            <div class="hero-buttons">
+
+                <a href="/tickets/add" class="btn outline">Send Ticket</a>
+            </div>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,185 @@
+/* -----------------------------------
+   Global Theme Variables
+----------------------------------- */
+:root {
+    --bg: #0b0f1f;
+    --panel: rgba(255, 255, 255, 0.06);
+    --panel-strong: rgba(255, 255, 255, 0.12);
+    --accent: #5df0ff;
+    --accent-2: #ff8e53;
+    --text: #f7f9ff;
+    --muted: #c7cee4;
+}
+
+/* -----------------------------------
+   Reset + Basics
+----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", "Manrope", system-ui, Segoe UI, Roboto, sans-serif;
+    background:
+        radial-gradient(110% 110% at 20% 20%, rgba(93, 240, 255, 0.18), transparent 45%),
+        radial-gradient(90% 90% at 80% 0%, rgba(255, 142, 83, 0.15), transparent 40%),
+        radial-gradient(120% 120% at 70% 80%, rgba(93, 240, 255, 0.12), transparent 45%),
+        var(--bg);
+    min-height: 100vh;
+    color: var(--text);
+}
+
+.page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* -----------------------------------
+   Header & Navigation
+----------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.brand-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
+    transition: all .25s ease;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav .pill {
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #0b0f1f !important;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(93, 240, 255, 0.3);
+}
+
+/* -----------------------------------
+   Hero Section
+----------------------------------- */
+.hero {
+    margin-top: 70px;
+    padding: 40px;
+    border-radius: 22px;
+    background: var(--panel);
+    border: 1px solid var(--panel-strong);
+    backdrop-filter: blur(14px);
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero span {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 10px auto 30px;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+/* -----------------------------------
+   Hero Buttons
+----------------------------------- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all .25s ease;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn.primary {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #0b0f1f;
+    box-shadow: 0 5px 20px rgba(93, 240, 255, .3);
+}
+
+.btn.secondary {
+    background: var(--accent);
+    color: #0b0f1f;
+}
+
+.btn.outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: .9;
+}
+
+/* -----------------------------------
+   Responsive Design
+----------------------------------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
