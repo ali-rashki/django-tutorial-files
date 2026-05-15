@@ -22,6 +22,17 @@
         <h1>Welcome to your course space</h1>
     </div>
 
+    <!-- دکمه Add New Course -->
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="http://127.0.0.1:8000/course/add/"
+           style="display: inline-block; background: linear-gradient(135deg, #5df0ff, #ff8e53);
+                  color: #0b0f1f; padding: 12px 28px; text-decoration: none; font-weight: 700;
+                  border-radius: 40px; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s;
+                  box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            ✚ Add New Course
+        </a>
+    </div>
+
     <div class="table-wrap">
         <table>
 
@@ -41,7 +52,6 @@
             {% for course in courses %}
 
             <tr>
-
                 <td class="image-cell">
                     {% if course.image %}
                     <img src="{{ course.image.url }}"
@@ -52,45 +62,31 @@
                     {% endif %}
                 </td>
 
-
                 <td>
-
                     <a class="table-link"
                        href="{% url 'course_detail' course.id %}">
                         {{ course.title }}
                     </a>
-
                 </td>
-
 
                 <td class="desc">
                     {{ course.description }}
                 </td>
 
-
                 <td>
-
                     {% if course.situation %}
-
-                    <s class="status active">
-                        Active
+                    <span class="status active">
+                            Active
                         </span>
-
-                        {% else %}
-
-                        <span class="status inactive">
+                    {% else %}
+                    <span class="status inactive">
                             Inactive
                         </span>
-
-                        {% endif %}
-
+                    {% endif %}
                 </td>
 
-
                 <td>{{ course.id }}</td>
-
                 <td>{{ course.views }}</td>
-
             </tr>
 
             {% empty %}
@@ -106,7 +102,6 @@
             </tbody>
 
         </table>
-
     </div>
 
 </div>
