@@ -6,7 +6,7 @@ users = [
         'username': 'amir',
         'name': 'amirhossein',
         'lastname': 'amir',
-        'phone': '09385412818',
+        'phone': '0912345213',
         'city': 'cfz'
     },
 
@@ -14,7 +14,7 @@ users = [
         'username': 'mamad80',
         'name': 'mohamad',
         'lastname': 'mamadzadeh',
-        'phone': '099155469428',
+        'phone': '0992313255',
         'city': 'mhd'
     },
 
@@ -22,7 +22,7 @@ users = [
         'username': 'farshad80',
         'name': 'fashad',
         'lastname': 'moti',
-        'phone': '09151901234',
+        'phone': '0941239111',
         'city': 'esf'
     },
 ]
